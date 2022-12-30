@@ -34,7 +34,7 @@ namespace ProductReviewManagement
                 while (true)
                 {
                     ProductReviewManagement prm = new ProductReviewManagement();
-                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n4: CountProductIdUsingGroupBy\n0: Exit \n");
+                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n4: CountProductIdUsingGroupBy\n5: GetProductIDAndReview\n0: Exit \n");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -55,10 +55,11 @@ namespace ProductReviewManagement
                             break;
                         case 4:
                             //uc4 Retrieve count of review present for each productID
-                            Console.WriteLine("count of review present for each productID :");
                             prm.CountProductIdUsingGroupBy(list);
                             break;
                         case 5:
+                            //uc5 Get ProductID And Review for all records
+                            prm.GetProductIDAndReview(list);
                             break;
                         case 6:
                             break;
