@@ -12,21 +12,21 @@ namespace ProductReviewManagement
             List<ProductReview> list = new List<ProductReview>()
             {
             new ProductReview() { ProductID = 1, UserID = 1, Rating = 5.5, Review = "Good", IsLike=true},
-            new ProductReview() { ProductID = 1, UserID = 1, Rating = 4.5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 2, UserID = 1, Rating = 6, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 2, UserID = 1, Rating = 5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 4, UserID = 1, Rating = 5, Review = "Nice", IsLike=true },
-            new ProductReview() { ProductID = 5, UserID = 1, Rating = 5, Review = "Nice", IsLike=true },
-            new ProductReview() { ProductID = 6, UserID = 1, Rating = 5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 7, UserID = 1, Rating = 7.5, Review = "Good", IsLike=false},
-            new ProductReview() { ProductID = 4, UserID = 1, Rating = 1.5, Review = "Good", IsLike=false },
-            new ProductReview() { ProductID = 9, UserID = 1, Rating = 6.5, Review = "Bad", IsLike=false },
-            new ProductReview() { ProductID = 10, UserID = 1, Rating = 5, Review = "Bad", IsLike=false },
-            new ProductReview() { ProductID = 11, UserID = 1, Rating = 5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 12, UserID = 1, Rating = 5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 13, UserID = 1, Rating = 5, Review = "Bad", IsLike=true },
-            new ProductReview() { ProductID = 14, UserID = 1, Rating = 5, Review = "Good", IsLike=true },
-            new ProductReview() { ProductID = 15, UserID = 1, Rating = 5, Review = "Good", IsLike=true }
+            new ProductReview() { ProductID = 1, UserID = 2, Rating = 4.5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 2, UserID = 3, Rating = 6, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 2, UserID = 4, Rating = 5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 4, UserID = 5, Rating = 5, Review = "Nice", IsLike=true },
+            new ProductReview() { ProductID = 5, UserID = 6, Rating = 5, Review = "Nice", IsLike=true },
+            new ProductReview() { ProductID = 6, UserID = 7, Rating = 5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 7, UserID = 8, Rating = 7.5, Review = "Good", IsLike=false},
+            new ProductReview() { ProductID = 4, UserID = 9, Rating = 1.5, Review = "Good", IsLike=false },
+            new ProductReview() { ProductID = 9, UserID = 10, Rating = 6.5, Review = "Bad", IsLike=false },
+            new ProductReview() { ProductID = 2, UserID = 11, Rating = 5, Review = "Bad", IsLike=false },
+            new ProductReview() { ProductID = 1, UserID = 12, Rating = 5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 4, UserID = 13, Rating = 5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 7, UserID = 14, Rating = 5, Review = "Bad", IsLike=true },
+            new ProductReview() { ProductID = 3, UserID = 15, Rating = 5, Review = "Good", IsLike=true },
+            new ProductReview() { ProductID = 1, UserID = 16, Rating = 5, Review = "Good", IsLike=true }
             };
             try
             {
@@ -34,7 +34,7 @@ namespace ProductReviewManagement
                 while (true)
                 {
                     ProductReviewManagement prm = new ProductReviewManagement();
-                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n0: Exit \n");
+                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n4: CountProductIdUsingGroupBy\n0: Exit \n");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -54,6 +54,9 @@ namespace ProductReviewManagement
                             prm.RetriveRecordsWithRatingGreaterThan3(list);
                             break;
                         case 4:
+                            //uc4 Retrieve count of review present for each productID
+                            Console.WriteLine("count of review present for each productID :");
+                            prm.CountProductIdUsingGroupBy(list);
                             break;
                         case 5:
                             break;
