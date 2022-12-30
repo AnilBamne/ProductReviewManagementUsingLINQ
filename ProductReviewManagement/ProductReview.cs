@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProductReviewManagement
 {
+    /// <summary>
+    /// Creating properties
+    /// </summary>
     public class ProductReview
     {
         public int ProductID { get; set; }
