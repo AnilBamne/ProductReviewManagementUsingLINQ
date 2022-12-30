@@ -33,20 +33,25 @@ namespace ProductReviewManagement
                 ProductReview productReview = new ProductReview();
                 while (true)
                 {
+                    ProductReviewManagement prm = new ProductReviewManagement();
                     Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n0: Exit \n");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
                         case 1:
+                            //uc1
                             Console.WriteLine("Displaying all records");
                             DisplayProducts(list);
                             break;
                         case 2:
-                            // uc1 display top 3 records by rating
+                            // uc2 display top 3 records by rating
                             Console.WriteLine("\nTop 3 records are :");
-                            ProductReviewManagement.RetriveTopThreeRecords(list);
+                            prm.RetriveTopThreeRecords(list);
                             break;
                         case 3:
+                            //uc3 RetriveRecordsWithRatingGreaterThan3
+                            Console.WriteLine("\nRecords With Rating Greater Than 3 or id =1 or 4 or 9 :");
+                            prm.RetriveRecordsWithRatingGreaterThan3(list);
                             break;
                         case 4:
                             break;
@@ -79,7 +84,7 @@ namespace ProductReviewManagement
             {
                 foreach (var lists in list)
                 {
-                    Console.WriteLine("Product id = " + lists.ProductID + "User id = " + lists.UserID + "Rating is = " + lists.Rating + " Review is = " + lists.Review + " isLike = " + lists.IsLike);
+                    Console.WriteLine("Product id = " + lists.ProductID + "  User id = " + lists.UserID + "  Rating is = " + lists.Rating + "  Review is = " + lists.Review + "  isLike = " + lists.IsLike);
                 }
             }
             catch(Exception e)
