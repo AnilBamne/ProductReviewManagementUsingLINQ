@@ -54,5 +54,16 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product ID="+p.Id+" Review="+p.Review);
             }
         }
+
+        /// <summary>
+        /// uc6 skip 5 records and dispaly all others
+        /// </summary>
+        /// <param name="list"></param>
+        public void Skip5Records(List<ProductReview> list)
+        {
+            Console.WriteLine("skipping 5 records");
+            var res = list.Skip(5).ToList();
+            Program.DisplayProducts(res);
+        }
     }
 }
